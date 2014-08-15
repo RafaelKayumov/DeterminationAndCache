@@ -11,7 +11,6 @@
 
 @interface UIImage (Cache)
 
-+ (UIImage *)imageWithCachedURL:(NSURL *)url;
-- (void)cacheWithURL:(NSURL *)url;
++ (void)imageWithURL:(NSURL *)url completion:(void (^)(UIImage *))completion;
 
 @end

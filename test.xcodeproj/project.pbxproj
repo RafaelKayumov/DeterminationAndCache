@@ -15,6 +15,7 @@
 		2DD1D8A4199E01A800848EB4 /* CacheImpelmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1D8A3199E01A800848EB4 /* CacheImpelmentation.m */; };
 		2DD1D8A7199E069300848EB4 /* UIImage+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1D8A6199E069300848EB4 /* UIImage+Cache.m */; };
 		783DD272199E1F6F00A5DEDB /* DetermineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 783DD271199E1F6F00A5DEDB /* DetermineObject.m */; };
+		783DD275199E2E7000A5DEDB /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 783DD274199E2E7000A5DEDB /* NSString+MD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		2DD1D8A6199E069300848EB4 /* UIImage+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cache.m"; sourceTree = "<group>"; };
 		783DD270199E1F6F00A5DEDB /* DetermineObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetermineObject.h; sourceTree = "<group>"; };
 		783DD271199E1F6F00A5DEDB /* DetermineObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetermineObject.m; sourceTree = "<group>"; };
+		783DD273199E2E7000A5DEDB /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		783DD274199E2E7000A5DEDB /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				2DD1D884199DFE6000848EB4 /* AppDelegate.m */,
 				2DD1D886199DFE6000848EB4 /* ViewController.h */,
 				2DD1D887199DFE6000848EB4 /* ViewController.m */,
+				783DD273199E2E7000A5DEDB /* NSString+MD5.h */,
+				783DD274199E2E7000A5DEDB /* NSString+MD5.m */,
 				783DD270199E1F6F00A5DEDB /* DetermineObject.h */,
 				783DD271199E1F6F00A5DEDB /* DetermineObject.m */,
 				2DD1D8A2199E01A800848EB4 /* CacheImpelmentation.h */,
@@ -166,6 +171,7 @@
 				2DD1D8A7199E069300848EB4 /* UIImage+Cache.m in Sources */,
 				783DD272199E1F6F00A5DEDB /* DetermineObject.m in Sources */,
 				2DD1D882199DFE6000848EB4 /* main.m in Sources */,
+				783DD275199E2E7000A5DEDB /* NSString+MD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

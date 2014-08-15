@@ -11,14 +11,11 @@
 ----
 ## Caching
 
-> ClassImplementation class Implements 2 approaches of caching. First is used to store images on disc.
+> ClassImplementation class used to cache file data
 
-    + (void)cacheImage:(UIImage *)image withURL:(NSURL *)url;
-    + (UIImage *)cachedImageWithURL:(NSURL *)url;
+    + (void)cacheFileData:(NSData *)data withURL:(NSURL *)url;
+    + (NSData *)cachedFileDataWithURL:(NSURL *)url;
 
-> Second is NSCache usage.
+> UIImage+Cache category is used to load image from url or cache
 
-    - (UIImage *)cachedImageForURL:(NSURL *)url;
-    - (void)cacheImage:(UIImage *)image forURL:(NSURL *)url;
-
-Use UIImage+Cache category to store image.
+    + (void)imageWithURL:(NSURL *)url completion:(void (^)(UIImage *))completion;

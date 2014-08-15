@@ -9,14 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface CacheImpelmentation : NSCache
+@interface CacheImpelmentation : NSObject
 
-+ (CacheImpelmentation *)sharedInstance;
-
-+ (void)cacheImage:(UIImage *)image withURL:(NSURL *)url;
-+ (UIImage *)cachedImageWithURL:(NSURL *)url;
-
-- (UIImage *)cachedImageForURL:(NSURL *)url;
-- (void)cacheImage:(UIImage *)image forURL:(NSURL *)url;
++ (void)cacheFileData:(NSData *)data withURL:(NSURL *)url;
++ (NSData *)cachedFileDataWithURL:(NSURL *)url;
 
 @end

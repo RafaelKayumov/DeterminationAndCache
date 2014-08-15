@@ -7,49 +7,27 @@
 //
 
 #import "CacheImpelmentation.h"
+#import "NSString+MD5.h"
 
 @implementation CacheImpelmentation
 
-+ (CacheImpelmentation *)sharedInstance {
-    static CacheImpelmentation * shared = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        shared = [[super alloc] init];
-    });
-    return shared;
-}
-
 + (NSString *)storePath {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-+ (NSString *)imagePathWithURL:(NSURL *)url {
-    NSArray *parts = [url.absoluteString componentsSeparatedByString:@"/"];
-    NSString *filename = [parts lastObject];
++ (NSString *)dataPathWithURL:(NSURL *)url {
+    NSString *filename = [url.absoluteString MD5Hash];
     return [[self storePath] stringByAppendingPathComponent:filename];
 }
 
-#pragma mark - use disc
-
-+ (void)cacheImage:(UIImage *)image withURL:(NSURL *)url {
-    NSData *imageData = UIImagePNGRepresentation(image);
-    [imageData writeToFile:[self imagePathWithURL:url] atomically:YES];
-}
-
-+ (UIImage *)cachedImageWithURL:(NSURL *)url {
-    return [UIImage imageWithContentsOfFile:[self imagePathWithURL:url]];
-}
-
-#pragma mark - use NSCache
-
-- (UIImage *)cachedImageForURL:(NSURL *)url {
-	return [self objectForKey:url.absoluteString];
-}
-
-- (void)cacheImage:(UIImage *)image forURL:(NSURL *)url {
-    if (image && url) {
-        [self setObject:image forKey:url.absoluteString];
++ (void)cacheFileData:(NSData *)data withURL:(NSURL *)url {
+    if (data && url) {
+        [data writeToFile:[self dataPathWithURL:url] atomically:YES];
     }
+}
+
++ (NSData *)cachedFileDataWithURL:(NSURL *)url {
+    return [NSData dataWithContentsOfFile:[self dataPathWithURL:url]];
 }
 
 @end
